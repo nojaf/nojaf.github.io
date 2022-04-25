@@ -47,3 +47,5 @@ bin/
 obj/
 
 *.lock.json
+
+.idea/

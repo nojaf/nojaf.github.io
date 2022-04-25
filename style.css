@@ -1,143 +1,137 @@
 html {
-    background: url(images/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Mohave', sans-serif;
 }
 
 body {
-    height: 100%;
-    display: flex;
+    background-color: #ffe710;
+    padding: 0;
+    margin: 0;
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.25);
-    width: 100%;
-    height: 100%;
-    position: fixed;
+main {
+    padding: 0;
+    margin: 15px;
 }
 
-#container {
-    background-color: rgba(255, 255, 255, 0.88);
-    padding: 20px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
+#inner {
+    background-color: #fff;
+    padding: 15px;
 }
 
 h1 {
-    font-size: 2em;
-    text-align: center;
-    letter-spacing: 4px;
-}
-
-h2 {
-    font-size: 1em;
-    text-align: center;
-    padding: 25px 0;
-    margin:0;
-}
-
-hr{
-    border: none;
-    border-bottom: 1px solid rgba(50, 153, 95, 0.2);
-    width: 250px;
-}
-
-ul {
-    list-style-type: none;
-    overflow: hidden;
-    text-align: center;
+    font-size: 2.66rem;
+    line-height: 3.0833rem;
+    font-weight: bold;
+    margin: 0;
     padding: 0;
 }
 
-ul li {
+h2 {
+    font-size: 2.66rem;
+    line-height: 3.0833rem;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0 0 3rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+#inner ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#inner ul li {
     display: inline-block;
-    margin-right: 2px;
-    font-size: 0.9rem;
-    padding:15px 0;
-    position: relative;
-    cursor: pointer;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 300;
 }
 
-ul li::after {
-    content:"\00a8";
-    margin-left: 5px;
-    position: relative;
-    top:3px;
-    font-size: 15px;
-    font-weight: 800;
-    color: #32995f;
+#inner ul li:first-child {
+    padding-left: 0;
 }
 
-ul li:last-child::after{
-    content: "";
+#inner ul li:not(:first-child) {
+    border-left: 3px solid #ffe710;
 }
 
-a, a:visited {
-    color: #32995f;
+footer {
+    background-color: #000;
 }
 
-a:hover {
-    color: #2a7f4f;
+footer ul {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.row {
-    margin: 10px auto;
-    position: relative;
-    float: left;
-    left: 20%;
-    width: 60%;
-    clear: both;
+footer ul li a {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
 }
 
-.row i,span {
-    margin-right: 10px;
+footer ul li a img {
+    height: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+footer ul li a:hover {
+
+}
+
+footer ul li a:visited {
+    color: #ffe710;
+}
+
+footer ul li a:link {
+    color: #ffe710;
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {
-    body {
+    #logo {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 33vw;
     }
 
-    #container {
-        margin: auto;
-        min-width:75%;
-        width: auto;
+    main {
+        position: fixed;
+        left: 10rem;
+        bottom: 5rem;
+        width: 60vw;
+        max-width: 700px;
+    }
+
+    #inner {
+        padding: 50px;
     }
 
     h2 {
-        font-size: 1.5em;
+        margin-bottom: 4rem;
     }
 
-    ul li {
-        font-size: 1em;
+    #inner ul li {
+        margin-bottom: 0;
     }
 
-    .row {
-        margin-bottom: 20px;
-        clear: none;
-        width: 40%;
+    footer ul {
+        justify-content: space-evenly;
     }
 
-    .inner-row {
-
+    footer ul li a:link {
+        font-size: 1.3rem;
     }
-}
-
-@media (min-width: 1024px) {
-    #container {
-        min-width: 40%;
-    }
-}
-
-.credit {
-    position: fixed;
-    display: block;
-    bottom: 5px;
-    right: 5px;
-    opacity: 0.5;
-    font-size: 12px;
 }
