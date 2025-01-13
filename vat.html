@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vat.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="icon" href="favicon.ico?v=1" type="image/icon">
@@ -35,5 +35,47 @@
     <strong>BE 0780.542.370</strong>
 </main>
 </body>
+<script type="module">
+    const vatElement = document.querySelector("strong")
+    vatElement.addEventListener('copy', (event) => {
+      event.preventDefault();
+      event.clipboardData.setData('text/plain', '0780542370');
+    });
+
+    let wakeLock = null;
+
+// Function to request Wake Lock
+async function requestWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    console.log(wakeLock);
+  } catch (err) {
+    console.error(`Wake Lock error: ${err.name}, ${err.message}`);
+  }
+}
+
+// Function to release Wake Lock
+function releaseWakeLock() {
+  if (wakeLock) {
+    wakeLock.release();
+    wakeLock = null;
+  }
+}
+
+// Automatically request Wake Lock when the page is visible
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    requestWakeLock();
+  } else {
+    releaseWakeLock();
+  }
+});
+
+// Cleanup Wake Lock when the user leaves the page
+window.addEventListener('beforeunload', releaseWakeLock);
+
+// Request Wake Lock initially when the page loads
+requestWakeLock();
+</script>
 
 </html>
