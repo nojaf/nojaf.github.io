@@ -1,5 +1,5 @@
 html {
-    font-family: 'Mohave', sans-serif;
+    font-family: "Mohave", sans-serif;
 }
 
 body {
@@ -16,9 +16,14 @@ main {
     margin: 15px;
 }
 
-img {
+header {
     background-color: #ffe710;
-    max-width: 500px;
+}
+
+img {
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
 }
 
 h1 {

@@ -49,3 +49,4 @@ obj/
 *.lock.json
 
 .idea/
+.vite/
