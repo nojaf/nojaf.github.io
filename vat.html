@@ -78,6 +78,11 @@ window.addEventListener('beforeunload', releaseWakeLock);
 
 // Request Wake Lock initially when the page loads
 requestWakeLock();
+
+// Register service worker for offline support
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/vat-sw.js');
+}
 </script>
 
 </html>
